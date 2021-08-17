@@ -48,3 +48,31 @@ table {
 .ivu-modal-body {
   padding: 18px;
 }
+
+.ivu-menu-light.ivu-menu-horizontal .ivu-menu-item, .ivu-menu-light.ivu-menu-horizontal .ivu-menu-submenu{
+  height: inherit;
+  line-height: inherit;
+  border-bottom: 2px solid transparent;
+  color: #515a6e;
+  font-size: 15px;
+  &-active, &:hover{
+      color: #fb8500;
+      border-bottom: 2px solid #fb8500;
+  }
+}
+.ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown .ivu-menu-drop-list {
+  min-width: 100%;
+  width: auto;
+  max-height: none;
+  font-size: 15px;
+  .ivu-menu-item{
+      height: auto;
+      line-height: normal;
+      border-bottom: 0;
+      float: none;
+  }
+}
+
+.ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown .ivu-menu-item-selected, .ivu-menu-horizontal .ivu-menu-submenu .ivu-select-dropdown .ivu-menu-item-selected:hover {
+  color: #fb8500;
+}

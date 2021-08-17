@@ -30,7 +30,7 @@ export default [
   {
     name: 'home',
     path: '/',
-    meta: {title: 'Học lập trình tương tác trực tuyến'},
+    meta: {title: 'Học thực hành lập trình trực tuyến'},
     component: Home
   },
   {

@@ -1,9 +1,7 @@
 <template>
   <div id="header">
     <Menu theme="light" mode="horizontal" @on-select="handleRoute" :active-name="activeMenu" :class="oj-menu">
-      <!-- <div class="logo"><span>{{website.website_name}}</span></div> -->
-      <!-- <div class="logo" title="Luyện Code Online"><a href="/"><img src="/static/img/logo-ny.png" height="60px" alt="Luyện Code Online - Học lập trình tương tác trực tuyến"></a></div> -->
-      <div class="logo" title="Luyện Code Online"><a href="/"><img src="/static/img/logo.png" height="60px" alt="Luyện Code Online - Học lập trình tương tác trực tuyến"></a></div>
+      <div class="logo" title="iSPACE CodeHub"><a href="/"><img src="/static/img/logo.png" height="60px" alt="iSPACE CodeHub - Học lập trình cùng iSPACE"></a></div>
       <Menu-item name="/problem">
         <Icon type="ios-keypad"></Icon>
         {{$t('m.NavProblems')}}
@@ -49,11 +47,13 @@
       <template v-if="!isAuthenticated">
         <div class="btn-menu">
           <Button
+                  class="btn-menu-login"
                   ref="loginBtn"
                   shape="circle"
                   @click="handleBtnClick('login')">{{$t('m.Login')}}
           </Button>
           <Button v-if="website.allow_register"
+                  class="btn-menu-login"
                   shape="circle"
                   @click="handleBtnClick('register')"
                   style="margin-left: 5px;">{{$t('m.Register')}}
@@ -104,7 +104,7 @@
       ...mapActions(['getProfile', 'changeModalStatus']),
       handleRoute (route) {
         if (route && route.indexOf('blog') >= 0) {
-          window.open('https://nguyenvanhieu.vn', '_blank')
+          window.open('https://ispace.edu.vn', '_blank')
         } else if (route && route.indexOf('admin') < 0) {
           this.$router.push(route)
         } else {
@@ -187,6 +187,16 @@
       font-size: 16px;
       float: right;
       margin-right: 10px;
+    }
+    .btn-menu-login {
+      font-size: 15px;
+      background-color: #fb8500;
+      color: #fdfdfd;
+      border-color: #fb8500;
+    }
+    .btn-menu-login:hover {
+      background-color: #fdfdfd;
+      color: #fb8500;
     }
 	.change-menu {
       float: right;

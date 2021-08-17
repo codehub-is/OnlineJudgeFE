@@ -57,7 +57,7 @@
       </Panel>
       <div class="free-course" style="margin-top: 20px;">
         <div class="title">Khóa học miễn phí</div>
-          <ul>
+          <!-- <ul>
             <li><a target="_blank" href="https://nguyenvanhieu.vn/series/cau-truc-du-lieu/" title="Cấu trúc dữ liệu">Cấu trúc dữ liệu</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
             <li><a target="_blank" href="https://nguyenvanhieu.vn/series/hoc-c-khong-kho/" class="series-508" title="Học C Không Khó">Học C Không Khó</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
             <li><a target="_blank" href="https://nguyenvanhieu.vn/go/learn-cpp/">Khóa học lập trình C++</a></li>
@@ -69,7 +69,7 @@
             <li><a target="_blank" href="https://nguyenvanhieu.vn/series/thuc-hanh-sql/" class="series-307" title="Thực hành SQL">Thực hành SQL</a></li>
             <li><a target="_blank" href="https://nguyenvanhieu.vn/hoc-lap-trinh-java/" class="series-126" title="Tự học lập trình Java">Tự học lập trình Java</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
             <li><a target="_blank" href="https://nguyenvanhieu.vn/series/tu-hoc-lap-trinh-javascript/" class="series-127" title="Tự học lập trình Javascript">Tự học Javascript</a></li>
-            </ul>
+            </ul> -->
           </div>
     </Col>
   </Row>

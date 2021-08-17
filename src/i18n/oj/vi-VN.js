@@ -78,7 +78,7 @@ export const m = {
   Contest_Announcements: 'Các thông báo của kỳ thi',
   By: 'Bởi',
   // ApplyResetPassword.vue
-  The_email_doesnt_exist: 'The email doesn\'t exist',
+  The_email_doesnt_exist: 'Email không tồn tại',
   Success: 'Thành công',
   Password_reset_mail_sent: 'Email khôi phục mật khẩu đã được gửi',
   // FAQ.vue
@@ -151,7 +151,7 @@ export const m = {
   // KatexEditor.vue
   Latex_Editor: 'Latex Editor',
   // NavBar.vue
-  Home: 'Home',
+  Home: 'Trang chủ',
   NavProblems: 'Bài tập',
   Contests: 'Kỳ thi',
   NavStatus: 'Bài nộp',
