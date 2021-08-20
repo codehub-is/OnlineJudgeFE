@@ -1,9 +1,11 @@
 <template>
-  <div class="flex-container">
+  <!-- <div class="flex-container"> -->
+    <Row type="flex" :gutter="18">
+      <Col :span="containerSpan">
     <div id="main">
       <Panel shadow>
         <div slot="title">{{title}}</div>
-        <div slot="extra">
+        <div slot="extra" style="padding-top:30px;">
           <ul class="filter">
             <li>
               <Dropdown @on-click="handleResultChange">
@@ -19,7 +21,7 @@
               </Dropdown>
             </li>
             <li>
-              <i-switch size="large" v-model="formFilter.myself" @on-change="handleQueryChange">
+              <i-switch size="large" v-model="formFilter.myself" @on-change="handleQueryChange" style="min-width:70px;">
                 <span slot="open">{{$t('m.Mine')}}</span>
                 <span slot="close">{{$t('m.All')}}</span>
               </i-switch>
@@ -33,12 +35,15 @@
             </li>
           </ul>
         </div>
-        <Table stripe :disabled-hover="true" :columns="columns" :data="submissions" :loading="loadingTable"></Table>
+        <Table stripe :disabled-hover="true" :columns="columns" :data="submissions" :loading="loadingTable" style="padding-top:60px;"></Table>
         <Pagination :total="total" :page-size="limit" @on-change="changeRoute" :current.sync="page"></Pagination>
       </Panel>
     </div>
+    </Col>
+
+    <Col span="5" v-if="!contestID">
     <div v-if="!contestID" id="right-column">
-      <Panel shadow style="padding-top: 0px;padding-bottom: 10px;min-height: 400px;">
+      <Panel shadow style="padding-top: 0px;padding-bottom: 10px;min-height: 400px; min-width: 200px;">
         <div slot="title" style="margin-left: -10px;margin-bottom: -10px;">{{$t('m.Ranklist_Title')}}</div>
         <ol style="margin-left: 40px;margin-bottom: 20px;">
           <li v-for="u in dataRank" :key="u.id" style="margin-top:4px;">
@@ -50,7 +55,9 @@
         </ol>
       </Panel>
     </div>
-  </div>
+    </Col>
+  </Row>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -68,6 +75,7 @@
     },
     data () {
       return {
+        containerSpan: 19,
         dataRank: [],
         rankLimit: 30,
         formFilter: {
@@ -218,6 +226,9 @@
         }
         this.routeName = this.$route.name
         this.getSubmissions()
+        if (this.contestID) {
+          this.containerSpan = 24
+        }
       },
       getRankData () {
         api.getUserRank(0, this.rankLimit, RULE_TYPE.ACM).then(res => {

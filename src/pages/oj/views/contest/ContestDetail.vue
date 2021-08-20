@@ -1,5 +1,7 @@
 <template>
-  <div class="flex-container">
+  <!-- <div class="flex-container"> -->
+    <Row type="flex" :gutter="18">
+      <Col span="19">
     <div id="contest-main">
       <!--children-->
       <transition name="fadeInUp">
@@ -33,6 +35,8 @@
       </div>
 
     </div>
+    </Col>
+    <Col span="5">
     <div v-show="showMenu" id="contest-menu">
       <VerticalMenu @on-click="handleRoute">
         <VerticalMenu-item :route="{name: 'contest-details', params: {contestID: contestID}}">
@@ -73,7 +77,9 @@
         </VerticalMenu-item>
       </VerticalMenu>
     </div>
-  </div>
+    </Col>
+    </Row>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -197,21 +203,22 @@
 </script>
 
 <style scoped lang="less">
-  pre {
-    display: inline-block;
-  }
+  // pre {
+  //   display: inline-block;
+  // }
 
   #countdown {
     font-size: 16px;
   }
 
   .flex-container {
+    display: block;
     #contest-main {
-      flex: 1 1;
+      // flex: 1 1;
       width: 0;
-      #contest-desc {
-        flex: auto;
-      }
+      // #contest-desc {
+      //   flex: auto;
+      // }
     }
     #contest-menu {
       flex: none;

@@ -177,10 +177,17 @@
     .drop-menu {
       float: right;
       margin-right: 30px;
-      position: absolute;
+      // position: absolute;
       right: 10px;
       &-title {
         font-size: 18px;
+      }
+      &-title:hover {
+        color: #fb8500;
+      }
+      &-title:focus {
+        box-shadow: 0.5px 0.5px 1.5px 0.5px #fb8500;
+        color: #fb8500;
       }
     }
     .btn-menu {

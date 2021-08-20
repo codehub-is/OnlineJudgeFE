@@ -1,9 +1,10 @@
 <template>
   <Row type="flex" :gutter="18">
-    <Col :span=19>
+    <!-- <Col :span=19> -->
+    <Col :xs="24" :sm="24" :lg="19">
       <Panel shadow>
         <div slot="title">{{$t('m.Problem_List')}}</div>
-        <div slot="extra">
+        <div slot="extra" style="padding-top:30px;">
           <ul class="filter">
             <li>
               <Dropdown @on-click="filterByDifficulty" style="cursor:pointer;">
@@ -39,7 +40,7 @@
             </li>
           </ul>
         </div>
-        <Table style="width: 100%; font-size: 16px;"
+        <Table style="width: 100%; font-size: 16px; padding-top:60px;"
               :columns="problemTableColumns"
               @on-sort-change="handleSortChange"
               :data="problemList"
@@ -49,7 +50,8 @@
       <Pagination :total="total" :page-size="limit" @on-change="pushRouter" :current.sync="query.page"></Pagination>
     </Col>
 
-    <Col :span="5">
+    <!-- <Col :span="5"> -->
+    <Col :xs="24" :sm="24" :lg="5">
       <Panel :padding="10">
         <div slot="title" class="taglist-title">{{$t('m.TagsTitle')}}</div>
         <Button long id="pick-one" @click="pickone">
@@ -91,7 +93,9 @@
           {
             title: 'ID',
             key: '_id',
-            width: 120,
+            // width: 120,
+            minWidth: 60,
+            maxWidth: 120,
             render: (h, params) => {
               return h('a', {
                 props: {
@@ -111,7 +115,7 @@
           },
           {
             title: this.$i18n.t('m.Title'),
-            width: 400,
+            minWidth: 100,
             render: (h, params) => {
               return h('a', {
                 props: {
@@ -124,8 +128,9 @@
                 style: {
                   padding: '2px 0',
                   overflow: 'hidden',
-                  whiteSpace: 'nowrap',
-                  textOverflow: 'ellipsis',
+                  whiteSpace: 'normal',
+                  textOverflow: 'unset',
+                  wordBreak: 'break-word',
                   textAlign: 'left',
                   width: '95%',
                   fontSize: '14px',
@@ -136,6 +141,8 @@
           },
           {
             title: this.$i18n.t('m.Level'),
+            minWidth: 60,
+            maxWidth: 150,
             render: (h, params) => {
               let t = params.row.difficulty
               let color = 'primary'
@@ -151,11 +158,15 @@
           {
             sortable: 'custom',
             title: this.$i18n.t('m.Total'),
+            minWidth: 60,
+            maxWidth: 150,
             key: 'submission_number'
           },
           {
             sortable: 'custom',
             title: this.$i18n.t('m.AC_Count'),
+            minWidth: 60,
+            maxWidth: 150,
             key: 'accepted_number',
             render: (h, params) => {
               return h('span', params.row.accepted_number)
@@ -264,6 +275,7 @@
           this.problemTableColumns.push(
             {
               title: this.$i18n.t('m.Tags'),
+              minWidth: 120,
               align: 'center',
               render: (h, params) => {
                 let tags = []
@@ -318,9 +330,22 @@
   .tag-btn {
     margin-right: 5px;
     margin-bottom: 10px;
+    &:hover {
+      color: #fb8500;
+      border-color: #fb8500;
+    }
   }
 
   #pick-one {
     margin-bottom: 10px;
+    background-color: #fb8500;
+    color: #fff;
+    border-color: #fb8500;
+    font-size: 15px;
+    padding: 0;
+    &:hover {
+      background-color: #fff;
+      color: #fb8500;
+    }
   }
 </style>

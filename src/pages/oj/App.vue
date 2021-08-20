@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <NavBar></NavBar>
-	<vue-canvas-nest :config="{color:'0,117,169', count: 200, opacity: 0.7, pointColor: '0,0,0', zIndex: -2}" :el="'.content-app'"></vue-canvas-nest>
+  <NavBar></NavBar>
+	<!-- <vue-canvas-nest :config="{color:'0,117,169', count: 200, opacity: 0.7, pointColor: '0,0,0', zIndex: -2}" :el="'.content-app'"></vue-canvas-nest> -->
     <div class="content-app theme1">
       <transition name="fadeInUp" mode="out-in">
         <router-view></router-view>

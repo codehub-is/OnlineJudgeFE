@@ -44,7 +44,7 @@
       </div>
     </Col>
     <Col :span="5" :gutter="20">
-      <Panel shadow style="padding-top: 0px;padding-bottom: 10px;min-height: 400px;">
+      <Panel shadow style="padding-top: 0px;padding-bottom: 10px;min-height: 400px; min-width: 250px;">
         <div slot="title" style="margin-left: -10px;margin-bottom: -10px;">{{$t('m.Ranklist_Title')}}</div>
         <ol style="margin-left: 40px;margin-bottom: 20px;">
           <li v-for="u in dataRank" :key="u.id">
@@ -56,20 +56,13 @@
         </ol>
       </Panel>
       <div class="free-course" style="margin-top: 20px;">
-        <div class="title">Khóa học miễn phí</div>
-          <!-- <ul>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/cau-truc-du-lieu/" title="Cấu trúc dữ liệu">Cấu trúc dữ liệu</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/hoc-c-khong-kho/" class="series-508" title="Học C Không Khó">Học C Không Khó</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/go/learn-cpp/">Khóa học lập trình C++</a></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/bai-tap-c-co-loi-giai/">Kho bài tập C/C++</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/huong-doi-tuong-cpp/" class="series-510" title="Hướng đối tượng C++">Hướng đối tượng C++</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/python-khong-kho/" class="series-507" title="Python Không Khó">Python Không Khó</a></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/hoc-nhanh-python-trong-30-phut/" class="series-132" title="Python Quick Tutorial">Python Quick Tutorial</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/selenium-khong-kho/" class="series-358" title="Selenium không khó">Selenium không khó</a></li><li><a href="https://nguyenvanhieu.vn/series/thu-vien-flask/" class="series-131" title="Thư viện Flask">Thư viện Flask</a></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/thuc-hanh-sql/" class="series-307" title="Thực hành SQL">Thực hành SQL</a></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/hoc-lap-trinh-java/" class="series-126" title="Tự học lập trình Java">Tự học lập trình Java</a><img style="width: 20px; height: 20px;" src="https://nguyenvanhieu.vn/wp-content/uploads/2020/07/hot-icon.gif"></li>
-            <li><a target="_blank" href="https://nguyenvanhieu.vn/series/tu-hoc-lap-trinh-javascript/" class="series-127" title="Tự học lập trình Javascript">Tự học Javascript</a></li>
-            </ul> -->
+        <div class="title">Tuyển sinh iSPACE</div>
+          <ul>
+            <li><a target="_blank" href="https://ispace.edu.vn/portfolio/an-ninh-mang-ispace/" title="Ngành An ninh mạng">Cao đẳng An ninh mạng</a><img style="width: 20px; height: 20px;" src="/static/img/hotnew.png"></li>
+            <li><a target="_blank" href="https://ispace.edu.vn/portfolio/quan-tri-dich-vu-cntt/" class="series-508" title="Ngành Quản trị dịch vụ CNTT">Ngành Quản trị dịch vụ CNTT</a><img style="width: 20px; height: 20px;" src="/static/img/hotnew.png"></li>
+            <li><a target="_blank" href="https://ispace.edu.vn/portfolio/phat-trien-phan-mem/" class="series-510" title="Ngành Phát triển phần mềm">Ngành Phát triển phần mềm</a><img style="width: 20px; height: 20px;" src="/static/img/hotnew.png"></li>
+            <li><a target="_blank" href="https://ispace.edu.vn/portfolio/thiet-ke-do-hoa/" class="series-132" title="Ngành Thiết kế đồ hoạ">Ngành Thiết kế đồ hoạ</a><img style="width: 20px; height: 20px;" src="/static/img/hotnew.png"></li>
+            </ul>
           </div>
     </Col>
   </Row>
@@ -269,7 +262,7 @@
     margin-top: 20px;
   }
   div.free-course > .title {
-    background: green;
+    background: #fb8500;
     text-transform: uppercase;
     color: white;
     margin: 0px;
@@ -278,12 +271,12 @@
     font-size: 1.2em;
   }
   div.free-course > ul{
-    border: solid 4px green;
+    border: solid 4px #fb8500;
     padding: 10px;
     margin-top: 0px;
   }
   div.free-course > ul li::before {
-    content: "📚";
+    content: "🎓";
     margin: 0px 10px 0 0px;
   }
   div.free-course > ul > li {
@@ -295,5 +288,8 @@
     text-decoration:none;
     color: inherit;
     // font-family: monospace, sans-serif;
+    &:hover {
+      color: #fb8500;
+    }
   }
 </style>

@@ -212,8 +212,10 @@
             a.entry {
               color: #495060;
               &:hover {
-                color: #2d8cf0;
-                border-bottom: 1px solid #2d8cf0;
+                // color: #2d8cf0;
+                // border-bottom: 1px solid #2d8cf0;
+                color: #fb8500;
+                border-bottom: 1px solid #fb8500;
               }
             }
           }

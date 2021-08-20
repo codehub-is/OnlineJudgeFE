@@ -232,7 +232,7 @@ export const m = {
   Low: 'Dễ',
   All: 'Tất cả',
   Reset: 'Khôi phục',
-  Pick_One: 'Thử thách 1 bài ngẫu nhiên',
+  Pick_One: 'Thử thách ngẫu nhiên',
   Difficulty: 'Độ khó',
   Total: 'Đã nộp',
   AC_Count: 'Bài đạt',

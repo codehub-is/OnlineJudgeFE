@@ -1,6 +1,7 @@
 <template>
   <Row type="flex" :gutter="18">
     <Col :span="containerSpan">
+    <!-- <Col :xs="{order:2, span:24}" :sm="{order:2, span:24}" :md="{order:1, span:containerSpan}" style="padding-bottom:20px;"> -->
       <Panel shadow :padding="10" >
         <div slot="title">
           {{title}}
@@ -16,12 +17,24 @@
           <template v-if="listVisible">
             <ul class="announcements-container" key="list">
               <li v-for="announcement in announcements" :key="announcement.title">
-                <div class="flex-container">
+                <!-- <div class="flex-container">
                   <div class="title"><a class="entry" @click="goAnnouncement(announcement)">
                     {{announcement.title}}</a></div>
                   <div class="date">{{announcement.create_time | localtime }}</div>
                   <div class="creator"> {{$t('m.By')}} {{announcement.created_by.username}}</div>
-                </div>
+                </div> -->
+                  <Row>
+                    <Col flex="8" class="flex-container">
+                    <div class="title"><a class="entry" @click="goAnnouncement(announcement)">
+                      {{announcement.title}}</a></div>
+                    </Col>
+                    <Col flex="2">
+                    <div class="date">{{announcement.create_time | localtime }}</div>
+                    </Col>
+                    <Col flex="2">
+                    <div class="creator"> {{$t('m.By')}} {{announcement.created_by.username}}</div>
+                    </Col>
+                  </Row>
               </li>
             </ul>
             <Pagination v-if="!isContest"
@@ -38,8 +51,9 @@
         </transition-group>
       </Panel>
       <Row v-if="!isContest" type="flex" :gutter="10" style="margin-top: 70px;">
-            <Col  :span="12">
-              <Panel shadow style="padding-top: 10px;padding-bottom: 10px;">
+            <!-- <Col  :span="12"> -->
+            <Col flex="1 1 400px" style="padding-bottom:20px;">
+              <Panel shadow style="padding-top: 10px; min-height: 100px;">
                 <div slot="title">Bài tập mới</div>
                 <ul style="margin-left: 40px;margin-bottom: 20px;">
                   <li style="padding: 5px 0px;"  v-for="p in problemList" :key="p.id">
@@ -48,8 +62,9 @@
                 </ul>
               </Panel>
             </Col>
-            <Col  :span="12">
-              <Panel shadow style="padding-top: 10px;padding-bottom: 10px;">
+            <!-- <Col  :span="12"> -->
+            <Col flex="1 1 400px">
+              <Panel shadow style="padding: 10px; min-height: 100px;">
                 <div slot="title">{{$t('m.TagsTitle')}}</div>
                 <Button v-for="tag in tagList"
                         :key="tag.name"
@@ -61,7 +76,9 @@
             </Col>
         </Row>
     </Col>
-    <Col :span="5" v-if="!isContest" >
+    <Col :span="6" v-if="!isContest" >
+    <!-- <Col :xs="{order:1, span:24}" :sm="{order:1, span:24}" :md="{order:2, span:6}" v-if="!isContest" style="padding-bottom:20px;"> -->
+      <Col>
       <Panel shadow>
         <div style="font-size:14px; text-align:center; width:100%; line-height:16px; background: transparent; color:#636e72;">Không ngừng luyện tập!</div>
         <div class="today">
@@ -72,11 +89,14 @@
         </div>
         <div v-if="days" style="margin:0 auto; margin-bottom:15px; font-size:12px; text-align:center; width:160px; line-height:16px; background: transparent; color:#636e72;">Bạn đã có <strong>{{days}} </strong> chuỗi ngày học</div>
         <div style="margin-top:-10px; margin:0 auto; font-size:14px; text-align:center; width:80%; line-height:16px; background: transparent; color:#636e72;">{{word}}</div>
-        <Button v-if="!SighinStatus" type="primary" icon="ios-alarm" @click="Sighin" long style="margin-top:20px; margin-bottom:20px; margin-left:10%; width:80%;">Ghi danh</Button>
+        <Button v-if="!SighinStatus" type="primary" icon="ios-alarm" @click="Sighin" long style="margin-top:20px; margin-bottom:20px; margin-left:10%; width:80%;">Điểm danh</Button>
         <Button v-else type="primary" icon="ios-alarm" long disabled style="margin-top:20px; margin-bottom:20px; margin-left:10%; width:80%;">
-            Ghi danh
+            Điểm danh
         </Button>
       </Panel>
+      </Col>
+      <!-- <Col :xs={span:0} :sm={span:0} :md={span:24}> -->
+      <Col>
       <Panel shadow style="margin-top: 37px;padding-bottom: 5px;">
         <div slot="title" style="margin-left: -10px;margin-bottom: -10px;">{{$t('m.Similar_Site')}}</div>
         <ul style="margin-left: 40px;margin-bottom: 20px;">
@@ -88,6 +108,7 @@
           <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://leetcode.com/?ref=luyencode', '_blank');">LeetCode (🇬🇧)</a></li>
         </ul>
       </Panel>
+      </Col>
     </Col>
   </Row>
 </template>
@@ -121,7 +142,7 @@
         announcement: '',
         listVisible: true,
         timer: null,
-        containerSpan: 19,
+        containerSpan: 18,
         SighinStatus: false,
         nowWeek: '',
         nowDate: '',
@@ -268,8 +289,8 @@
           a.entry {
             color: #495060;
             &:hover {
-              color: #2d8cf0;
-              border-bottom: 1px solid #2d8cf0;
+              color: #fb8500;
+              border-bottom: 1px solid #fb8500;
             }
           }
         }
@@ -317,14 +338,17 @@
     margin-bottom: 20px;
   }
   .tag-btn:hover {
+    border-color: #fb8500;
     a {
-       color: #2d8cf0;
+       // color: #2d8cf0;
+       color: #fb8500;
     }
   }
   .link-style {
     color:#264c67
   }
   .link-style:hover {
-    color: #2d8cf0;
+    // color: #2d8cf0;
+    color: #fb8500;
   }
 </style>
