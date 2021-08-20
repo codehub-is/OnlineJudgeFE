@@ -35,7 +35,7 @@
             </li>
           </ul>
         </div>
-        <Table stripe :disabled-hover="true" :columns="columns" :data="submissions" :loading="loadingTable" style="padding-top:60px;"></Table>
+        <Table stripe :disabled-hover="true" :columns="columns" :data="submissions" :loading="loadingTable" style="margin-top:60px;"></Table>
         <Pagination :total="total" :page-size="limit" @on-change="changeRoute" :current.sync="page"></Pagination>
       </Panel>
     </div>

@@ -6,9 +6,14 @@
       <transition name="fadeInUp" mode="out-in">
         <router-view></router-view>
       </transition>
-      <div class="footer">
+
+    </div>
+        <footer>
+          <Card style="margin-top: 15px; background-color: #54452F; border-color: #54452F;">
+      <!-- <div class="footer"> -->
         <!-- <p v-html="website.website_footer"></p> -->
-        <p><strong>iSPACE CodeHub</strong> là website thực hành lập trình trực tuyến của <b>Trường Cao đẳng An ninh mạng iSPACE</b></p>
+        <!-- <p><br><p> -->
+        <p style="color:#fff; "><strong>iSPACE CodeHub</strong> là website thực hành lập trình trực tuyến của <b>Trường Cao đẳng An ninh mạng iSPACE</b></p>
         
         <div class="menu" style="margin-top: 10px;">
           <a href="/ide" title="Live IDE">Live IDE</a> &nbsp;&nbsp;-&nbsp;&nbsp;
@@ -16,10 +21,11 @@
           <a href="/judger" title="Thông tin máy chấm">Trình chấm</a> &nbsp;&nbsp;-&nbsp;&nbsp;
           <a href="/about" title="Về chúng tôi">Giới thiệu</a>
         </div>
-        <p> Copyright © 2021 <a href="/">iSPACE CodeHub</a> &nbsp;-&nbsp; Powered by <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/codehub-is/OnlineJudgeDeploy">OnlineJudge</a></p>
-      </div>
-    </div>
-	<BackTop></BackTop>
+        <p style="color: #ecd9c8;"> Copyright © 2021 <a target="_blank" href="https://ispace.edu.vn">iSPACE CodeHub</a> &nbsp;-&nbsp; Powered by <a target="_blank" rel="nofollow noopener noreferrer" href="https://github.com/codehub-is/OnlineJudgeDeploy">OnlineJudge</a></p>
+      <!-- </div> -->
+      </Card>
+      </footer>
+      <BackTop></BackTop>
   </div>
 </template>
 
@@ -95,11 +101,10 @@
   }
 }
 
-  .footer {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: small;
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .fadeInUp-enter-active {

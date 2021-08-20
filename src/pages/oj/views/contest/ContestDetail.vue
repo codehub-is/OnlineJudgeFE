@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="flex-container"> -->
     <Row type="flex" :gutter="18">
-      <Col span="19">
+      <Col :span="spanContent">
     <div id="contest-main">
       <!--children-->
       <transition name="fadeInUp">
@@ -36,7 +36,7 @@
 
     </div>
     </Col>
-    <Col span="5">
+    <Col span="5" v-if="showMenu">
     <div v-show="showMenu" id="contest-menu">
       <VerticalMenu @on-click="handleRoute">
         <VerticalMenu-item :route="{name: 'contest-details', params: {contestID: contestID}}">
@@ -179,6 +179,12 @@
         ['contestMenuDisabled', 'contestRuleType', 'contestStatus', 'countdown', 'isContestAdmin',
           'OIContestRealTimePermission', 'passwordFormVisible']
       ),
+      spanContent () {
+        if (this.showMenu) {
+          return 19
+        }
+        return 24
+      },
       countdownColor () {
         if (this.contestStatus) {
           return CONTEST_STATUS_REVERSE[this.contestStatus].color

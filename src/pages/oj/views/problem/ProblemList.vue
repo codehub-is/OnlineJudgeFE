@@ -40,12 +40,12 @@
             </li>
           </ul>
         </div>
-        <Table style="width: 100%; font-size: 16px; padding-top:60px;"
+        <Table style="width: 100%; font-size: 16px; margin-top:60px;"
               :columns="problemTableColumns"
               @on-sort-change="handleSortChange"
               :data="problemList"
               :loading="loadings.table"
-              disabled-hover></Table>
+              ></Table>
       </Panel>
       <Pagination :total="total" :page-size="limit" @on-change="pushRouter" :current.sync="query.page"></Pagination>
     </Col>
@@ -134,7 +134,8 @@
                   textAlign: 'left',
                   width: '95%',
                   fontSize: '14px',
-                  color: '#495060'
+                  // color: '#495060'
+                  color: '#bf5a02'
                 }
               }, params.row.title)
             }

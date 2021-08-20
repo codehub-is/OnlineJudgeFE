@@ -53,7 +53,7 @@
       <Row v-if="!isContest" type="flex" :gutter="10" style="margin-top: 70px;">
             <!-- <Col  :span="12"> -->
             <Col flex="1 1 400px" style="padding-bottom:20px;">
-              <Panel shadow style="padding-top: 10px; min-height: 100px;">
+              <Panel shadow style="padding-top: 10px; padding-bottom: 10px; min-height: 100px;">
                 <div slot="title">Bài tập mới</div>
                 <ul style="margin-left: 40px;margin-bottom: 20px;">
                   <li style="padding: 5px 0px;"  v-for="p in problemList" :key="p.id">
@@ -100,12 +100,12 @@
       <Panel shadow style="margin-top: 37px;padding-bottom: 5px;">
         <div slot="title" style="margin-left: -10px;margin-bottom: -10px;">{{$t('m.Similar_Site')}}</div>
         <ul style="margin-left: 40px;margin-bottom: 20px;">
-          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://ispace.edu.vn/?ref=luyencode', '_blank');">Trường Cao đẳng An ninh mạng iSPACE (🇻🇳)</a></li>
-          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://freecontest.net/?ref=luyencode', '_blank');">Free Contest (🇻🇳)</a></li>
-          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://oj.vnoi.info/?ref=luyencode', '_blank');">VNOJ: VNOI Online Judge (🇻🇳)</a></li>
-          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('http://ntucoder.net/?ref=luyencode', '_blank');">NTUCoder (🇻🇳)</a></li>
-          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://codeforces.com/?ref=luyencode', '_blank');">Codeforces (🇬🇧)</a></li>
-          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://leetcode.com/?ref=luyencode', '_blank');">LeetCode (🇬🇧)</a></li>
+          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://ispace.edu.vn/?ref=ispace', '_blank');">Trường Cao đẳng An ninh mạng iSPACE (🇻🇳)</a></li>
+          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://freecontest.net/?ref=ispace', '_blank');">Free Contest (🇻🇳)</a></li>
+          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://oj.vnoi.info/?ref=ispace', '_blank');">VNOJ: VNOI Online Judge (🇻🇳)</a></li>
+          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('http://ntucoder.net/?ref=ispace', '_blank');">NTUCoder (🇻🇳)</a></li>
+          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://codeforces.com/?ref=ispace', '_blank');">Codeforces (🇬🇧)</a></li>
+          <li style="padding: 5px 0px;"><a href="#" class="link-style" onclick="event.preventDefault();window.open('https://leetcode.com/?ref=ispace', '_blank');">LeetCode (🇬🇧)</a></li>
         </ul>
       </Panel>
       </Col>

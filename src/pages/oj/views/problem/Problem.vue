@@ -5,7 +5,9 @@
   }
 </style>
 <template>
-  <div class="flex-container">
+  <Row type="flex" :wrap="false" :gutter="18">
+    <Col flex="auto">
+  <!-- <div class="flex-container"> -->
     <div id="problem-main">
       <!--problem main-->
       <Panel :padding="40" shadow>
@@ -126,6 +128,9 @@
         <script type="application/javascript" src="https://utteranc.es/client.js" repo="codehub-is/comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async> </script>
       </Card> -->
     </div>
+
+    </Col>
+    <Col flex="0 0 300px">
     <div id="right-column">
       <VerticalMenu @on-click="handleRoute" style="cursor: pointer;">
         <template v-if="this.contestID">
@@ -235,7 +240,9 @@
         Bạn cũng có thể tham gia đội đóng góp bài tập cho iSPACE CodeHub, liên hệ <a href="" target="_blank">admin</a> để được hướng dẫn chi tiết.
       </Card> -->
     </div>
-  
+
+    </Col>
+
     <Modal v-model="graphVisible">
       <div id="pieChart-detail">
         <ECharts :options="largePie" :initOptions="largePieInitOpts"></ECharts>
@@ -244,7 +251,8 @@
         <Button @click="graphVisible=false">{{$t('m.Close')}}</Button>
       </div>
     </Modal>
-  </div>
+  <!-- </div> -->
+  </Row>
 </template>
 
 <script>
